@@ -1,5 +1,6 @@
-import { Composition } from "remotion";
+import { Composition, staticFile } from "remotion";
 import { Scene, myCompSchema } from "./Scene";
+import { MyVide } from "./MyVideo";
 
 // Welcome to the Remotion Three Starter Kit!
 // Two compositions have been created, showing how to use
@@ -12,7 +13,6 @@ import { Scene, myCompSchema } from "./Scene";
 
 // @remotion/three Docs:
 // https://remotion.dev/docs/three
-
 // React Three Fiber Docs:
 // https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
 
@@ -28,9 +28,13 @@ export const RemotionRoot: React.FC = () => {
         height={720}
         schema={myCompSchema}
         defaultProps={{
-          deviceType: "phone",
-          phoneColor: "rgba(110, 152, 191, 0.00)" as const,
-          baseScale: 1,
+          backgroundColor: "#00ff00",
+          assetType: "image",
+          assetSrc: "https://cdn-icons-png.flaticon.com/512/6978/6978281.png",
+          spawnCount: 80,
+          seed: 42,
+          fallSpeed: 1.4,
+          itemScale: 1.2,
         }}
       />
     </>
